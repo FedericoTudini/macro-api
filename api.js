@@ -11,7 +11,7 @@ app.use(express.json());
 
 //DB Connection
 mongoose.connect(
-    process.env.DB_CONNECTION,
+    "mongodb+srv://ftudini:asroma1927@cluster.so1wv.mongodb.net/macro?retryWrites=true&w=majority&ssl=true",
     { useNewUrlParser: true, useUnifiedTopology: true },
     () => console.log("[ Connected to Database ]")
 )
