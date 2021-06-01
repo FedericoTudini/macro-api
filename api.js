@@ -76,7 +76,3 @@ app.get('/clients-names', async (req, res) => {
         res.json({ message : err });
     }
 });
-
-app.get('*', (req, res) => {
-    res.send('Hello World!');
-})
