@@ -9,6 +9,7 @@ app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+
 //DB Connection
 mongoose.connect(
     "mongodb+srv://ftudini:asroma1927@cluster.so1wv.mongodb.net/macro?retryWrites=true&w=majority&ssl=true",
@@ -17,8 +18,8 @@ mongoose.connect(
 )
 
 //Listening
-app.listen(3000, () => {
-    console.log("[ Listening on port 3000 ]");
+app.listen(process.env.PORT || 3001, () => {
+    console.log("[ Server is ready and listening ]");
 })
 
 //POST (CREATE)
@@ -38,6 +39,7 @@ app.post('/add-client', (req, res) => {
         cell: req.body.cell,
     });
     console.log(client);
+
 
     client.save()
         .then((result) => {
