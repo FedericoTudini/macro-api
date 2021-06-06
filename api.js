@@ -81,3 +81,21 @@ app.get('/clients-names', async (req, res) => {
         res.json({ message : err });
     }
 });
+
+//clients' filtered
+app.get('/clients-filtered', async (req, res) => {
+    try 
+    {
+        var temp = await Client.find();
+        const clients = temp.map(client => ({
+            nomeCompleto: client.nomeCompleto,
+            cell: client.cell,
+            email: client.email
+        }));
+        res.json(clients);
+    } 
+    catch (err)
+    {
+        res.json({ message : err });
+    }
+});
