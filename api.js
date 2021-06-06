@@ -46,7 +46,10 @@ app.post('/add-client', (req, res) => {
             console.log("[ Nuovo cliente aggiunto al DB ]");
             res.send(client);
         })
-        .catch(err => console.log(err));
+        .catch(err => {
+            console.log(err);
+            res.json({message : err});
+        });
         
 });
 
