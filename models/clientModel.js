@@ -12,7 +12,8 @@ const clientSchema = new Schema({
     },
     cell: {
         type: Number,
-        required: true
+        required: true,
+        unique: true
     }
 }, { timestamps : true });
 
