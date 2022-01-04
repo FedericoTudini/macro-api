@@ -12,7 +12,7 @@ app.use(express.json());
 
 //DB Connection
 mongoose.connect(
-    "",
+    process.env.DB,
     { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true },
     () => console.log("[ Connected to Database ]")
 )
